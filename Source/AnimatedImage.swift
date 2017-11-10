@@ -8,7 +8,7 @@ Model object encapsulating an animated GIF.
 import UIKit
 import ImageIO
 
-class AnimatedImage {
+public class AnimatedImage {
     public let frameCount: Int
     public let duration: Double
     public let loopCount: Int

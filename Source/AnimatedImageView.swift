@@ -8,15 +8,15 @@ View for displaying an animated GIF.
 import UIKit
 import ImageIO
 
-class AnimatedImageView: UIView {
-    var animatedImage: AnimatedImage? {
+public class AnimatedImageView: UIView {
+    public var animatedImage: AnimatedImage? {
         didSet {
             resetAnimationState()
             updateAnimation()
             setNeedsLayout()
         }
     }
-    var isPlaying: Bool = false {
+    public var isPlaying: Bool = false {
         didSet {
             if isPlaying != oldValue {
                 updateAnimation()
@@ -43,7 +43,7 @@ class AnimatedImageView: UIView {
         displayLink?.invalidate()
     }
 
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         var viewAspect: CGFloat = 0.0
         if bounds.height > 0.0 {
@@ -80,23 +80,23 @@ class AnimatedImageView: UIView {
         displayView?.frame = viewFrame
     }
 
-    override func didMoveToWindow() {
+    override public func didMoveToWindow() {
         super.didMoveToWindow()
         updateAnimation()
     }
 
-    override func didMoveToSuperview() {
+    override public func didMoveToSuperview() {
         super.didMoveToSuperview()
         updateAnimation()
     }
 
-    override var alpha: CGFloat {
+    override public var alpha: CGFloat {
         didSet {
             updateAnimation()
         }
     }
 
-    override var isHidden: Bool {
+    override public var isHidden: Bool {
         didSet {
             updateAnimation()
         }

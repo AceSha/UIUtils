@@ -10,16 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var animatedImageView: AnimatedImageView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        view.backgroundColor = .white
+        testAnimatedImage()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
     }
 
+    func testAnimatedImage() {
+//        animateImage.gif
+        animatedImageView = AnimatedImageView(frame: view.bounds)
+        animatedImageView.animatedImage = AnimatedImage(url: URL(string: "http://www.lia-edu.com/upload/image/20170717/20170717151619_8233.gif")!)
+        animatedImageView.isPlaying = true
+        view.addSubview(animatedImageView)
+    }
 
 }
 
